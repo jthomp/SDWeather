@@ -59,24 +59,24 @@ namespace SDWeather {
             string luckMsg = "";
 
             if (luck > 0.07) {
-                luckMsg = "The spirits are very happy today! They will do their best to shower everyone with good fortune.";
+                luckMsg = "Very happy.";
             }
 
             if (luck >= 0.02 && luck <= 0.07) {
-                luckMsg = "The spirits are in good humor today. I think you'll have a little extra luck.";
+                luckMsg = "Good humor.";
             }
 
             if (luck != 0 && luck >= -0.02 && luck <= 0.02) {
-                luckMsg = "The spirits feel neutral today. The day is in your hands.";
+                luckMsg = "Neutral.";
             }
 
             if (luck == 0) {
-                luckMsg = "This is rare. The spirits feel absolutely neutral today.";
+                luckMsg = "Absolutely neutral.";
             }
 
             if (luck >= -0.07 && luck < -0.02) {
-                string annoyedMsg1 = "The spirits are somewhat annoyed today. Luck will not be on your side.";
-                string annoyedMsg2 = "The spirits are somewhat mildly perturbed today. Luck will not be on your side.";
+                string annoyedMsg1 = "Somewhat annoyed.";
+                string annoyedMsg2 = "Somewhat mildly perturbed.";
 
                 Random r = new Random();
                 int rNum = r.Next(0, 10);
@@ -84,7 +84,7 @@ namespace SDWeather {
             }
 
             if (luck < -0.07) {
-                luckMsg = "The spirits are very displeased today. They will do their best to make your life difficult.";
+                luckMsg = "Very displeased.";
             }
 
             return luckMsg;
