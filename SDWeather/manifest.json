@@ -1,10 +1,10 @@
 {
-  "name": "SDWeather",
   "author": "Antillian",
-  "version": "0.0.20",
   "description": "Get today's fortune and tomorrow's weather in your console.",
-  "uniqueid": "Antillian.SDWeather",
   "entrydll": "SDWeather.dll",
   "minimumapiversion": "3.0.0",
-  "updatekeys": []
+  "name": "SDWeather",
+  "uniqueid": "Antillian.SDWeather",
+  "updatekeys": [],
+  "version": "0.0.3"
 }
