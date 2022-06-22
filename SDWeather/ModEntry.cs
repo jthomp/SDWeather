@@ -36,7 +36,7 @@ namespace SDWeather {
         }
 
         private string PrintLuck() {
-            return $"Today's Luck: {DetermineLuckMessage(Game1.player.DailyLuck)}";
+            return $"Spirits Today: {DetermineLuckMessage(Game1.player.DailyLuck)}";
         }
 
         private string DetermineWeatherMessage(int weather) {
