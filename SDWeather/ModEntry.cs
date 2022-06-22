@@ -72,24 +72,24 @@ namespace SDWeather {
             string luckMsg = "";
 
             if (luck > 0.07) {
-                luckMsg = "Very happy.";
+                luckMsg = "Very happy";
             }
 
             if (luck >= 0.02 && luck <= 0.07) {
-                luckMsg = "Good humor.";
+                luckMsg = "Good humor";
             }
 
             if (luck != 0 && luck >= -0.02 && luck <= 0.02) {
-                luckMsg = "Neutral.";
+                luckMsg = "Neutral";
             }
 
             if (luck == 0) {
-                luckMsg = "Absolutely neutral.";
+                luckMsg = "Absolutely neutral";
             }
 
             if (luck >= -0.07 && luck < -0.02) {
-                string annoyedMsg1 = "Somewhat annoyed.";
-                string annoyedMsg2 = "Somewhat mildly perturbed.";
+                string annoyedMsg1 = "Somewhat annoyed";
+                string annoyedMsg2 = "Somewhat mildly perturbed";
 
                 Random r = new Random();
                 int rNum = r.Next(0, 10);
@@ -97,7 +97,7 @@ namespace SDWeather {
             }
 
             if (luck < -0.07) {
-                luckMsg = "Very displeased.";
+                luckMsg = "Very displeased";
             }
 
             return luckMsg;
