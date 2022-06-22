@@ -26,7 +26,7 @@ namespace SDWeather {
         }
 
         private void DayStarted(object sender, EventArgs e) {
-            string msg = $"{PrintWeatherForTomorrow()}. {PrintLuck()}";
+            string msg = $"{PrintWeatherForTomorrow()}. {PrintLuck()}.";
             this.Monitor.Log(msg, LogLevel.Debug);
             Game1.showGlobalMessage(msg);
         }
