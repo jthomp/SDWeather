@@ -32,7 +32,7 @@ namespace SDWeather {
         }
 
         private string PrintWeatherForTomorrow() {
-           return $"Tomorrow's Weather: {DetermineWeatherMessage(Game1.weatherForTomorrow)}";
+            return $"Tomorrow's Weather: {DetermineWeatherMessage(Game1.weatherForTomorrow)}";
         }
 
         private string PrintLuckForToday() {

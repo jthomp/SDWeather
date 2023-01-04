@@ -1,6 +1,6 @@
 {
   "author": "Antillian",
-  "description": "Get today's fortune and tomorrow's weather in your console.",
+  "description": "Get today's fortune and tomorrow's weather at the start of each day.",
   "entrydll": "SDWeather.dll",
   "minimumapiversion": "3.0.0",
   "name": "SDWeather",
