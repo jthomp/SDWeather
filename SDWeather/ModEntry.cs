@@ -26,7 +26,7 @@ namespace SDWeather {
         }
 
         private void DayStarted(object sender, EventArgs e) {
-            string msg = $"{PrintWeatherForTomorrow()}. {PrintLuckForToday()}.";
+            string msg = $"{PrintWeatherForTomorrow()}.\n\n{PrintLuckForToday()}.";
             this.Monitor.Log(msg, LogLevel.Debug);
             Game1.showGlobalMessage(msg);
         }
@@ -39,7 +39,7 @@ namespace SDWeather {
             return $"Spirits Today: {DetermineLuckMessage(Game1.player.DailyLuck)}";
         }
 
-        private string DetermineWeatherMessage(int weather) {
+        private string DetermineWeatherMessage(int weather = 0) {
             string weatherMsg = "Sunny";
 
             switch (weather) {
@@ -68,7 +68,7 @@ namespace SDWeather {
             return weatherMsg;
         }
 
-        private string DetermineLuckMessage(double luck) {
+        private string DetermineLuckMessage(double luck = 0) {
             string luckMsg = "";
 
             if (luck > 0.07) {
