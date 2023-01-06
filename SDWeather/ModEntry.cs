@@ -28,7 +28,6 @@ namespace SDWeather {
         private void DayStarted(object sender, EventArgs e) {
             string msg = $"{PrintWeatherForTomorrow()}. {PrintLuckForToday()}.";
             this.Monitor.Log(msg, LogLevel.Debug);
-            // Game1.showGlobalMessage(msg);
             Game1.addHUDMessage(new HUDMessage(msg, Microsoft.Xna.Framework.Color.OrangeRed, 10000));
         }
 
