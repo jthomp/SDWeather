@@ -27,7 +27,7 @@ namespace SDWeather {
 
         private void DayStarted(object sender, EventArgs e) {
             string msg = $"{PrintWeatherForTomorrow()}. {PrintLuckForToday()}.";
-            this.Monitor.Log(msg, LogLevel.Debug);
+            this.Monitor.Log(msg, LogLevel.Info);
             Game1.addHUDMessage(new HUDMessage(msg, Microsoft.Xna.Framework.Color.OrangeRed, 10000));
         }
 
@@ -68,36 +68,32 @@ namespace SDWeather {
             return weatherMsg;
         }
 
-        private string DetermineLuckMessage(double luck = 0) {
+        private string DetermineLuckMessage(double luck = 0.00) {
             string luckMsg = "";
+            string annoyedMsg1 = "Somewhat annoyed";
+            string annoyedMsg2 = "Somewhat mildly perturbed";
 
-            if (luck > 0.07) {
-                luckMsg = "Very happy";
-            }
-
-            if (luck >= 0.02 && luck <= 0.07) {
-                luckMsg = "Good humor";
-            }
-
-            if (luck != 0 && luck >= -0.02 && luck <= 0.02) {
-                luckMsg = "Neutral";
-            }
-
-            if (luck == 0) {
-                luckMsg = "Absolutely neutral";
-            }
-
-            if (luck >= -0.07 && luck < -0.02) {
-                string annoyedMsg1 = "Somewhat annoyed";
-                string annoyedMsg2 = "Somewhat mildly perturbed";
-
-                Random r = new Random();
-                int rNum = r.Next(0, 10);
-                luckMsg = rNum < 5 ? annoyedMsg1 : annoyedMsg2;
-            }
-
-            if (luck < -0.07) {
-                luckMsg = "Very displeased";
+            switch ( luck ) {
+                case double _ when luck > 0.07:
+                    luckMsg = "Very happy";
+                    break;
+                case double _ when luck >= 0.02 && luck <= 0.07:
+                    luckMsg = "Good humor";
+                    break;
+                case double _ when luck != 0 && luck >= -0.02 && luck <= 0.02:
+                    luckMsg = "Neutral";
+                    break;
+                case double _ when luck == 0:
+                    luckMsg = "Absolutely neutral";
+                    break;
+                case double _ when luck >= -0.07 && luck < -0.02:
+                    Random r = new Random();
+                    int rNum = r.Next(0, 10);
+                    luckMsg = rNum < 5 ? annoyedMsg1 : annoyedMsg2;
+                    break;
+                case double _ when luck < -0.07:
+                    luckMsg = "Very displeased";
+                    break;
             }
 
             return luckMsg;
