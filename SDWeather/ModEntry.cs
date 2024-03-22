@@ -28,44 +28,15 @@ namespace SDWeather {
         private void DayStarted(object sender, EventArgs e) {
             string msg = $"{PrintWeatherForTomorrow()}. {PrintLuckForToday()}.";
             this.Monitor.Log(msg, LogLevel.Info);
-            Game1.addHUDMessage(new HUDMessage(msg, Microsoft.Xna.Framework.Color.OrangeRed, 10000));
+            Game1.addHUDMessage(new HUDMessage(msg, 10000, true));
         }
 
         private string PrintWeatherForTomorrow() {
-            return $"Weather Tomorrow: {DetermineWeatherMessage(Game1.weatherForTomorrow)}";
+            return $"Weather Tomorrow: {Game1.weatherForTomorrow}";
         }
 
         private string PrintLuckForToday() {
             return $"Spirits Today: {DetermineLuckMessage(Game1.player.DailyLuck)}";
-        }
-
-        private string DetermineWeatherMessage(int weather = 0) {
-            string weatherMsg = "Sunny";
-
-            switch (weather) {
-                case 1:
-                    weatherMsg = "Rain";
-                    break;
-                case 2:
-                    weatherMsg = "Windy";
-                    break;
-                case 3:
-                    weatherMsg = "Lightning";
-                    break;
-                case 4:
-                    weatherMsg = "Festival";
-                    break;
-                case 5:
-                    weatherMsg = "Snow";
-                    break;
-                case 6:
-                    weatherMsg = "Wedding";
-                    break;
-                default:
-                    break;
-            }
-
-            return weatherMsg;
         }
 
         private string DetermineLuckMessage(double luck = 0.00) {
